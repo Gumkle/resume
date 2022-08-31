@@ -1,0 +1,192 @@
+\documentclass[10pt]{letter}
+
+\usepackage{geometry}
+\usepackage{fix-cm}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{grffile}
+\usepackage{emoji}
+\usepackage{setspace}
+
+\geometry{a4paper,top=0.5in,bottom=0.5in,left=0.5in,right=0.5in}
+\renewcommand{\familydefault}{\sfdefault}
+\renewcommand{\arraystretch}{1.5}
+
+\newcommand{\firstname}{Dawid}
+\newcommand{\lastname}{Dziedzic}
+\newcommand{\age}{24}
+\newcommand{\whereami}{Poznań, Poland}
+
+\newcommand{\applyfor}{Golang Developer}
+\newcommand{\form}{Preffered Contract of mandate, but open to B2B}
+\newcommand{\availability}{Full-time}
+\newcommand{\startfrom}{October 2022}
+
+\newcommand{\photopath}{zdjecie.jpg}
+\newcommand{\email}{dawidd.321@gmail.com}
+\newcommand{\phone}{+48 451 670 524}
+\newcommand{\github}{https://github.com/Gumkle}
+\newcommand{\linkedin}{https://www.linkedin.com/in/dawid-dziedzic-8b0a61141}
+
+\newcommand{\aboutme}{
+    I am a programmer, I code. Interested in clean and easy to 
+    mainatin code, software architecture, programming languages and 
+    solving algorithmic problems. Everyday Linux user 
+    (privately as well as professionally), with an experience in 
+    developing and maintaining  web appliactions as well as 
+    services based on Docker, k8s and GCP. Using mainly PHP, but
+    familiar with Vue for frontend and Golang. Engaged in 
+    academic community around Poznań University of Technology, 
+    longtime member of Academic Web Application Research Group AKAI.
+}
+
+\newcommand{\experience}{
+    {Transparent Data sp. z o.o.}/
+    {10.2020-07.2022}/
+    {Maintaining existing services in PHP and JS, developing minor additions.
+    Later for 1.5 year taking great part in transforming company's architecture
+    from centralized monolithic into distributed, cloud-native
+    services on GCP, with use of RabbitMQ, Docker, k8s, Grafana and some other
+    third party provided services and applications.}/
+    tdlogo.png,
+    {Framaprom}/
+    {10.2019-07.2020}/
+    {Mainly maintaining monolithic, legacy application with Symfony framework.
+    Providing tooling and data for data analysts. Taking part in designing
+    of new, distributed tooling for monolith replacement.}/
+    fplogo.png,
+    {Poznań University of Technology}/
+    {04.2019-10.2019}/
+    {Developing new, hardware-based (non cloud-based) tooling for academic 
+    network admins to control campus' LAN traffic. Fixing security
+    vulnerabilities in datatbases and web applications.}/
+    pplogo.png,
+    {MDA Interactive Agency}/
+    {04.2018-04.2019}/
+    {Developing Wordpress websites, JS/HTML one-pages, simple JS
+    games and mid-scale, hardware-based applications in Laravel
+    and Symfony frameworks. Creating internal, ready-to-use solutions,
+    commonly repeating over multiple projects inside the company.}/
+    mdalogo.png
+}
+
+\newcommand{\education}{
+    {Poznań University of Technology}/
+    {10.2018-10.2022}/
+    {Automatics and Robotics, Bachelor of Engineering}/
+    pplogo.png
+}
+
+\begin{document}
+    \begin{minipage}[t]{0.5\textwidth}
+        \begin{tabular}{r | l}
+            \multirow{2}{*}{\fontsize{70pt}{70pt} \selectfont CV} & \large{\firstname} \\
+            & \large{\lastname} \\[4ex]
+        \end{tabular} \\[2\baselineskip]
+        \hspace*{1cm}\textbf{email}: \email \\
+        \hspace*{1cm}\textbf{phone}: \phone
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.5\textwidth}
+        \begin{flushright}
+            \includegraphics[scale=0.3]{\photopath}            
+        \end{flushright}
+    \end{minipage}
+    \\[1\baselineskip]
+    \hrule
+    \begin{tabular}{p{4cm} l}
+        % \textbf{Applying for:} & \applyfor\\
+        \textbf{Location:} & \whereami\\
+        \textbf{Age:} & \age\\
+        \textbf{Form of cooperation:} & \form\\
+        \textbf{Availability:} & \availability\\
+        \textbf{Can start from:} & \startfrom\\
+        \vspace{-40pt}\textbf{About me:} & \begin{minipage}{0.75\textwidth}
+            \aboutme
+        \end{minipage}\\
+        \textbf{Github:} & \href{\github}{\github}\\
+        \textbf{Linkedin:} & \href{\linkedin}{\linkedin}\\
+    \end{tabular}\\[2\baselineskip]
+
+    \includegraphics[width=0.8cm,height=0.8cm]{experience.png} {\fontsize{30pt}{30pt} \selectfont Experience}\\
+    \hrule
+    \normalsize
+    \foreach \place/\time/\whatidid/\logopath in \experience{
+        \begin{minipage}{0.1\linewidth}
+            \includegraphics[width=1cm,height=1cm]\logopath\\
+        \end{minipage}
+        \begin{minipage}{0.3\linewidth}
+            \textbf{\large{\place}} \\[\baselineskip]
+            \time \\
+        \end{minipage}
+        \hspace{0.1\linewidth}
+        \begin{minipage}{0.5\linewidth}
+            \whatidid \\[1.5\baselineskip]
+        \end{minipage}
+    }
+    \\[2\baselineskip]
+
+    \includegraphics[width=0.8cm,height=0.8cm]{education.png} {\fontsize{30pt}{30pt} \selectfont Education}\\
+    \hrule
+    \normalsize
+    \foreach \place/\time/\whatidid/\logopath in \education{
+        \begin{minipage}{0.1\linewidth}
+            \includegraphics[width=1cm,height=1cm]{\logopath}  \\
+        \end{minipage}
+        \begin{minipage}{0.3\linewidth}
+            \textbf{\large{\place}} \\[\baselineskip]
+            \time \\
+        \end{minipage}
+        \hspace{0.1\linewidth}
+        \begin{minipage}{0.5\linewidth}
+            \whatidid \\[1.5\baselineskip]
+        \end{minipage}
+    }
+    \\[2\baselineskip]
+
+    \includegraphics[width=0.8cm,height=0.8cm]{languages.png} {\fontsize{30pt}{30pt} \selectfont Languages}\\
+    \hrule
+    \large
+    \begin{tabular}{l l l}
+        \emoji{flag-poland} Polish & native & \emoji{star} \emoji{star} \emoji{star} \emoji{star} \emoji{star} \emoji{star} \\
+        \emoji{flag-united-kingdom} English & C1 & \emoji{star} \emoji{star} \emoji{star} \emoji{star} \emoji{star} \\
+    \end{tabular}
+    \\[2\baselineskip]
+
+    \includegraphics[width=0.8cm,height=0.8cm]{additional_activity.png} {\fontsize{30pt}{30pt} \selectfont Additional Activity}\\
+    \hrule
+    \normalsize
+    \begin{minipage}{0.1\linewidth}
+        \includegraphics[width=1.5cm,height=1.5cm]{logo_akai.png}  \\
+    \end{minipage}
+    \begin{minipage}{0.3\linewidth}
+        \textbf{\large{Academic Web Research Group}} \\[\baselineskip]
+        10.2017 - present \\
+    \end{minipage}
+    \hspace{0.1\linewidth}
+    \begin{minipage}{0.5\linewidth}
+        Being active member of the group, former leader, 
+        now a more experienced colleague for younger, new
+        students willing to dive into web development or
+        programming in general. \\[1.5\baselineskip]
+    \end{minipage}
+    \\[2\baselineskip]
+
+    \includegraphics[width=0.8cm,height=0.8cm]{hobbies.png} {\fontsize{30pt}{30pt} \selectfont Hobbies}\\
+    \hrule
+    \large
+    \emoji{sailboat} Sailing \\
+    \emoji{tent} Camping \& trekking \\
+    \emoji{laptop} Computers \& electronics \\
+    \emoji{hammer-and-wrench} General engineering and DIY \\
+    \emoji{man-swimming} Swimming \\
+    \emoji{man-lifting-weights} Gym \\
+    \emoji{man-biking} Biking
+    \normalsize
+    \\[2\baselineskip]
+
+\end{document}
